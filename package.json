@@ -1,0 +1,49 @@
+{
+  "name": "@yangatc/dsh-filetree",
+  "version": "0.1.0",
+  "description": "DSH（DeepSeek Harness）文件树侧边栏插件：右侧栏展示当前工作区文件树（主题半透明、emoji 图标、可折叠），双击文件在主窗口「文件预览」tab 内预览（代码语法高亮 / 图片 / 大文件提示），多文件二级 tab 栏 + 关闭按钮。Durable profile plugin for DeepSeek Harness.",
+  "type": "module",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-connection"
+      ]
+    }
+  },
+  "scripts": {
+    "check": "node --check lib/index.js && node --check lib/client.js",
+    "prepublishOnly": "npm run check"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "cordis",
+    "filetree",
+    "file-tree",
+    "file-viewer",
+    "sidebar",
+    "preview",
+    "plugin"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
